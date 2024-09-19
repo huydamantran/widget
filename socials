@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Socials</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+
+    .wrapper {
+      padding-top: 10px;
+      display: inline-flex;
+    }
+
+    .social {
+      background-color: #eae9e9;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .icon {
+      font-size: 1.2em;
+    }
+
+    /* Hover effects for each social button */
+    .gmail:hover {
+      background-color: #23c8c8;
+    }
+
+    .outlook:hover {
+      background-color: #4267B2;
+    }
+
+    .slack:hover {
+      background: radial-gradient(circle, rgba(241, 102, 217, 1) 10%, rgba(252, 176, 69, 1) 76%, rgba(253, 29, 29, 1) 100%);
+    }
+
+    .google-drive:hover {
+      background-color: #0e76a8;
+    }
+
+    .google-keep:hover {
+      background-color: #26a7de;
+    }
+
+    .chatgpt:hover {
+      background-color: #ff4500;
+    }
+
+    .social:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <!-- Start Gmail Icon -->
+    <div id="gmail" onclick="navigate(this.id)" class="social gmail">
+      <span class="icon email"><i class="fas fa-envelope"></i></span>
+    </div>
+    <!-- End Gmail Icon -->
+
+    <!-- Start Outlook Icon -->
+    <div id="outlook" onclick="navigate(this.id)" class="social outlook">
+      <span class="icon outlook"><i class="fa-brands fa-microsoft"></i></span>
+    </div>
+    <!-- End Outlook Icon -->
+
+    <!-- Start Slack Icon -->
+    <div id="slack" onclick="navigate(this.id)" class="social slack">
+      <span class="icon slack"><i class="fa-brands fa-slack"></i></span>
+    </div>
+    <!-- End Slack Icon -->
+
+    <!-- Start Google Drive Icon -->
+    <div id="google-drive" onclick="navigate(this.id)" class="social google-drive">
+      <span class="icon google-drive"><i class="fa-brands fa-google-drive"></i></span>
+    </div>
+    <!-- End Google Drive Icon -->
+
+    <!-- Start Google Keep Icon -->
+    <div id="google-keep" onclick="navigate(this.id)" class="social google-keep">
+      <span class="icon google-keep"><i class="fa-solid fa-lightbulb"></i></span>
+    </div>
+    <!-- End Google Keep Icon -->
+
+    <!-- Start ChatGPT Icon -->
+    <div id="chatgpt" onclick="navigate(this.id)" class="social chatgpt">
+      <span class="icon chatgpt"><i class="fa-solid fa-robot"></i></span>
+    </div>
+    <!-- End ChatGPT Icon -->
+
+  </div>
+
+  <script>
+    function navigate(id) {
+      let url;
+
+      switch (id) {
+        case "gmail":
+          url = "mailto:huy@traninsuranceagency.com";
+          break;
+        case "outlook":
+          url = "mailto:htran@farmersagent.com";
+          break;
+        case "slack":
+          url = "https://app.slack.com/client/";
+          break;
+        case "google-drive":
+          url = "https://drive.google.com/drive/home";
+          break;
+        case "google-keep":
+          url = "https://keep.google.com/";
+          break;
+        case "chatgpt":
+          url = "https://chat.openai.com/";
+          break;
+        default:
+          console.log("Invalid ID: " + id);
+          return;
+      }
+
+      window.open(url, '_blank').focus(); // Opens the link in a new tab
+    }
+  </script>
+
+</body>
+
+</html>
